@@ -105,11 +105,25 @@ controller.on('slash_command', function (slashCommand, message) {
 
             // If we made it here, just echo what the user typed back at them
             //TODO You do it!
+            slashCommand.replyPublic(message, message.text);
             slashCommand.replyPublic(message, "1", function() {
                 slashCommand.replyPublicDelayed(message, "2").then(slashCommand.replyPublicDelayed(message, "3"));
             });
 
             break;
+
+        case "/tableflip":
+
+            slashCommand.replyPublic(message, "(╯°□°）╯︵ ┻━┻");
+
+            break;
+
+        case "/tablefix":
+
+            slashCommand.replyPublic(message, "┬─┬ノ( º _ ºノ)");
+
+            break;
+
         default:
             slashCommand.replyPublic(message, "I'm afraid I don't know how to " + message.command + " yet.");
 
@@ -117,4 +131,3 @@ controller.on('slash_command', function (slashCommand, message) {
 
 })
 ;
-
